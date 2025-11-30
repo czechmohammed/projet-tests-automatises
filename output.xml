@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on linux)" generated="2025-11-30T01:03:04.188386" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Simple" source="/home/elmoh/projet-tests-automatises/tests/test_simple.robot">
+<test id="s1-t1" name="Test d'ouverture de Google" line="5">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:03:04.338034" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>https://www.google.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-30T01:03:04.337723" elapsed="1.492881"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:03:05.855546" level="INFO">Page title is 'Google'.</msg>
+<arg>Google</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-11-30T01:03:05.831291" elapsed="0.024551"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-30T01:03:05.856333" elapsed="0.078979"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:03:04.336674" elapsed="1.599131"/>
+</test>
+<status status="PASS" start="2025-11-30T01:03:04.189301" elapsed="1.747354"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Simple" id="s1" pass="1" fail="0" skip="0">Test Simple</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
