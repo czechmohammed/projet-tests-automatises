@@ -1,338 +1,1069 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.9 on linux)" generated="2025-11-30T01:32:25.504222" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Ajout Tache" source="/home/elmoh/projet-tests-automatises/tests/test_ajout_tache.robot">
-<test id="s1-t1" name="TC001 - Ajouter une tache simple" line="7">
+<robot generator="Robot 7.3.2 (Python 3.13.9 on linux)" generated="2025-11-30T01:35:25.291393" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/home/elmoh/projet-tests-automatises/tests">
+<suite id="s1-s1" name="Test Ajout Tache" source="/home/elmoh/projet-tests-automatises/tests/test_ajout_tache.robot">
+<test id="s1-s1-t1" name="TC001 - Ajouter une tache simple" line="7">
 <kw name="Ouvrir l'application" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:25.652553" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
+<msg time="2025-11-30T01:35:25.441607" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-30T01:32:25.652229" elapsed="3.571825"/>
+<status status="PASS" start="2025-11-30T01:35:25.441279" elapsed="3.453696"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-11-30T01:32:29.224600" elapsed="0.294724"/>
+<status status="PASS" start="2025-11-30T01:35:28.895291" elapsed="0.285584"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${INPUT_FIELD}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-30T01:32:29.519873" elapsed="0.039537"/>
+<status status="PASS" start="2025-11-30T01:35:29.181159" elapsed="0.022624"/>
 </kw>
-<status status="PASS" start="2025-11-30T01:32:25.651465" elapsed="3.908217"/>
+<status status="PASS" start="2025-11-30T01:35:25.440504" elapsed="3.763469"/>
 </kw>
 <kw name="Ajouter une tache" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:29.561300" level="INFO">Typing text 'Acheter du pain' into text field 'css:.new-todo'.</msg>
+<msg time="2025-11-30T01:35:29.205342" level="INFO">Typing text 'Acheter du pain' into text field 'css:.new-todo'.</msg>
 <arg>${INPUT_FIELD}</arg>
 <arg>${texte}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-30T01:32:29.560873" elapsed="0.125408"/>
+<status status="PASS" start="2025-11-30T01:35:29.204993" elapsed="0.109312"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:29.687231" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
-<msg time="2025-11-30T01:32:29.995307" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2025-11-30T01:32:29.995482" level="INFO">Releasing special key RETURN.</msg>
+<msg time="2025-11-30T01:35:29.315205" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:35:29.621235" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:35:29.621335" level="INFO">Releasing special key RETURN.</msg>
 <arg>${INPUT_FIELD}</arg>
 <arg>RETURN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2025-11-30T01:32:29.686532" elapsed="0.390068"/>
+<status status="PASS" start="2025-11-30T01:35:29.314588" elapsed="0.345741"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-30T01:32:30.577345" level="INFO">Slept 500 milliseconds.</msg>
+<msg time="2025-11-30T01:35:30.161005" level="INFO">Slept 500 milliseconds.</msg>
 <arg>0.5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-30T01:32:30.076848" elapsed="0.500780"/>
+<status status="PASS" start="2025-11-30T01:35:29.660601" elapsed="0.500613"/>
 </kw>
 <arg>Acheter du pain</arg>
-<status status="PASS" start="2025-11-30T01:32:29.560271" elapsed="1.017629"/>
+<status status="PASS" start="2025-11-30T01:35:29.204467" elapsed="0.956964"/>
 </kw>
 <kw name="Verifier que la tache existe" owner="keywords">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:30.594337" level="INFO">Current page contains text 'Acheter du pain'.</msg>
+<msg time="2025-11-30T01:35:30.175101" level="INFO">Current page contains text 'Acheter du pain'.</msg>
 <arg>${texte}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-11-30T01:32:30.579223" elapsed="0.015317"/>
+<status status="PASS" start="2025-11-30T01:35:30.162477" elapsed="0.012847"/>
 </kw>
 <arg>Acheter du pain</arg>
-<status status="PASS" start="2025-11-30T01:32:30.578466" elapsed="0.016300"/>
+<status status="PASS" start="2025-11-30T01:35:30.161894" elapsed="0.013638"/>
 </kw>
 <kw name="Compter les taches actives" owner="keywords">
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:30.619600" level="INFO">${count_text} = 1 item left!</msg>
+<msg time="2025-11-30T01:35:30.196771" level="INFO">${count_text} = 1 item left!</msg>
 <var>${count_text}</var>
 <arg>${ITEM_COUNT}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-30T01:32:30.595793" elapsed="0.023910"/>
+<status status="PASS" start="2025-11-30T01:35:30.176546" elapsed="0.020336"/>
 </kw>
 <return>
 <value>${count_text}</value>
-<status status="PASS" start="2025-11-30T01:32:30.619889" elapsed="0.000139"/>
+<status status="PASS" start="2025-11-30T01:35:30.197085" elapsed="0.000150"/>
 </return>
-<msg time="2025-11-30T01:32:30.620371" level="INFO">${count} = 1 item left!</msg>
+<msg time="2025-11-30T01:35:30.197608" level="INFO">${count} = 1 item left!</msg>
 <var>${count}</var>
-<status status="PASS" start="2025-11-30T01:32:30.595249" elapsed="0.025181"/>
+<status status="PASS" start="2025-11-30T01:35:30.176026" elapsed="0.021648"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${count}</arg>
 <arg>1 item left</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-11-30T01:32:30.620778" elapsed="0.000344"/>
+<status status="PASS" start="2025-11-30T01:35:30.198029" elapsed="0.000367"/>
 </kw>
 <kw name="Fermer le navigateur" owner="keywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-30T01:32:30.622099" elapsed="1.013065"/>
+<status status="PASS" start="2025-11-30T01:35:30.199490" elapsed="1.004169"/>
 </kw>
-<status status="PASS" start="2025-11-30T01:32:30.621615" elapsed="1.013716"/>
+<status status="PASS" start="2025-11-30T01:35:30.198968" elapsed="1.004886"/>
 </kw>
 <doc>Verifier qu'on peut ajouter une tache</doc>
 <tag>ajout</tag>
 <tag>priorite_haute</tag>
-<status status="PASS" start="2025-11-30T01:32:25.650600" elapsed="5.984872"/>
+<status status="PASS" start="2025-11-30T01:35:25.439656" elapsed="5.764355"/>
 </test>
-<test id="s1-t2" name="TC002 - Ajouter plusieurs taches" line="16">
+<test id="s1-s1-t2" name="TC002 - Ajouter plusieurs taches" line="16">
 <kw name="Ouvrir l'application" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:31.637333" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
+<msg time="2025-11-30T01:35:31.206064" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-30T01:32:31.636986" elapsed="3.373371"/>
+<status status="PASS" start="2025-11-30T01:35:31.205653" elapsed="3.449691"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-11-30T01:32:35.010641" elapsed="0.303466"/>
+<status status="PASS" start="2025-11-30T01:35:34.655633" elapsed="0.299517"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${INPUT_FIELD}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-30T01:32:35.314478" elapsed="0.026131"/>
+<status status="PASS" start="2025-11-30T01:35:34.955551" elapsed="0.021849"/>
 </kw>
-<status status="PASS" start="2025-11-30T01:32:31.636552" elapsed="3.704363"/>
+<status status="PASS" start="2025-11-30T01:35:31.205148" elapsed="3.772445"/>
 </kw>
 <kw name="Ajouter une tache" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:35.343357" level="INFO">Typing text 'Tache 1' into text field 'css:.new-todo'.</msg>
+<msg time="2025-11-30T01:35:34.978859" level="INFO">Typing text 'Tache 1' into text field 'css:.new-todo'.</msg>
 <arg>${INPUT_FIELD}</arg>
 <arg>${texte}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-30T01:32:35.342825" elapsed="0.087377"/>
+<status status="PASS" start="2025-11-30T01:35:34.978480" elapsed="0.078142"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:35.431186" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
-<msg time="2025-11-30T01:32:35.734979" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2025-11-30T01:32:35.735099" level="INFO">Releasing special key RETURN.</msg>
+<msg time="2025-11-30T01:35:35.058187" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:35:35.390206" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:35:35.390323" level="INFO">Releasing special key RETURN.</msg>
 <arg>${INPUT_FIELD}</arg>
 <arg>RETURN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2025-11-30T01:32:35.430486" elapsed="0.339919"/>
+<status status="PASS" start="2025-11-30T01:35:35.057087" elapsed="0.369323"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-30T01:32:36.271156" level="INFO">Slept 500 milliseconds.</msg>
+<msg time="2025-11-30T01:35:35.927071" level="INFO">Slept 500 milliseconds.</msg>
 <arg>0.5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-30T01:32:35.770663" elapsed="0.500935"/>
+<status status="PASS" start="2025-11-30T01:35:35.426663" elapsed="0.500674"/>
 </kw>
 <arg>Tache 1</arg>
-<status status="PASS" start="2025-11-30T01:32:35.341641" elapsed="0.930830"/>
+<status status="PASS" start="2025-11-30T01:35:34.978032" elapsed="0.949579"/>
 </kw>
 <kw name="Ajouter une tache" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:36.274928" level="INFO">Typing text 'Tache 2' into text field 'css:.new-todo'.</msg>
+<msg time="2025-11-30T01:35:35.929487" level="INFO">Typing text 'Tache 2' into text field 'css:.new-todo'.</msg>
 <arg>${INPUT_FIELD}</arg>
 <arg>${texte}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-30T01:32:36.274320" elapsed="0.030963"/>
+<status status="PASS" start="2025-11-30T01:35:35.929095" elapsed="0.027927"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:36.306925" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
-<msg time="2025-11-30T01:32:36.640408" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2025-11-30T01:32:36.640518" level="INFO">Releasing special key RETURN.</msg>
+<msg time="2025-11-30T01:35:35.958260" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:35:36.293554" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:35:36.293704" level="INFO">Releasing special key RETURN.</msg>
 <arg>${INPUT_FIELD}</arg>
 <arg>RETURN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2025-11-30T01:32:36.305943" elapsed="0.349135"/>
+<status status="PASS" start="2025-11-30T01:35:35.957379" elapsed="0.350813"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-30T01:32:37.155870" level="INFO">Slept 500 milliseconds.</msg>
+<msg time="2025-11-30T01:35:36.809180" level="INFO">Slept 500 milliseconds.</msg>
 <arg>0.5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-30T01:32:36.655356" elapsed="0.500768"/>
+<status status="PASS" start="2025-11-30T01:35:36.308491" elapsed="0.501033"/>
 </kw>
 <arg>Tache 2</arg>
-<status status="PASS" start="2025-11-30T01:32:36.273399" elapsed="0.883103"/>
+<status status="PASS" start="2025-11-30T01:35:35.928453" elapsed="0.881563"/>
 </kw>
 <kw name="Ajouter une tache" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:37.158488" level="INFO">Typing text 'Tache 3' into text field 'css:.new-todo'.</msg>
+<msg time="2025-11-30T01:35:36.811385" level="INFO">Typing text 'Tache 3' into text field 'css:.new-todo'.</msg>
 <arg>${INPUT_FIELD}</arg>
 <arg>${texte}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-30T01:32:37.158054" elapsed="0.034733"/>
+<status status="PASS" start="2025-11-30T01:35:36.811018" elapsed="0.027482"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:37.193834" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
-<msg time="2025-11-30T01:32:37.481050" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2025-11-30T01:32:37.481235" level="INFO">Releasing special key RETURN.</msg>
+<msg time="2025-11-30T01:35:36.839583" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:35:37.129251" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:35:37.129405" level="INFO">Releasing special key RETURN.</msg>
 <arg>${INPUT_FIELD}</arg>
 <arg>RETURN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2025-11-30T01:32:37.193095" elapsed="0.302961"/>
+<status status="PASS" start="2025-11-30T01:35:36.838856" elapsed="0.308066"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-30T01:32:37.997114" level="INFO">Slept 500 milliseconds.</msg>
+<msg time="2025-11-30T01:35:37.647715" level="INFO">Slept 500 milliseconds.</msg>
 <arg>0.5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-30T01:32:37.496382" elapsed="0.500989"/>
+<status status="PASS" start="2025-11-30T01:35:37.147245" elapsed="0.500710"/>
 </kw>
 <arg>Tache 3</arg>
-<status status="PASS" start="2025-11-30T01:32:37.157375" elapsed="0.840266"/>
+<status status="PASS" start="2025-11-30T01:35:36.810545" elapsed="0.837617"/>
 </kw>
 <kw name="Verifier que la tache existe" owner="keywords">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:38.010750" level="INFO">Current page contains text 'Tache 1'.</msg>
+<msg time="2025-11-30T01:35:37.661485" level="INFO">Current page contains text 'Tache 1'.</msg>
 <arg>${texte}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-11-30T01:32:37.998981" elapsed="0.011914"/>
+<status status="PASS" start="2025-11-30T01:35:37.649224" elapsed="0.012452"/>
 </kw>
 <arg>Tache 1</arg>
-<status status="PASS" start="2025-11-30T01:32:37.998133" elapsed="0.012906"/>
+<status status="PASS" start="2025-11-30T01:35:37.648661" elapsed="0.013175"/>
 </kw>
 <kw name="Verifier que la tache existe" owner="keywords">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:38.020370" level="INFO">Current page contains text 'Tache 2'.</msg>
+<msg time="2025-11-30T01:35:37.672414" level="INFO">Current page contains text 'Tache 2'.</msg>
 <arg>${texte}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-11-30T01:32:38.011778" elapsed="0.008735"/>
+<status status="PASS" start="2025-11-30T01:35:37.662622" elapsed="0.009985"/>
 </kw>
 <arg>Tache 2</arg>
-<status status="PASS" start="2025-11-30T01:32:38.011357" elapsed="0.009303"/>
+<status status="PASS" start="2025-11-30T01:35:37.662175" elapsed="0.010595"/>
 </kw>
 <kw name="Verifier que la tache existe" owner="keywords">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:38.029972" level="INFO">Current page contains text 'Tache 3'.</msg>
+<msg time="2025-11-30T01:35:37.682597" level="INFO">Current page contains text 'Tache 3'.</msg>
 <arg>${texte}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-11-30T01:32:38.021377" elapsed="0.008726"/>
+<status status="PASS" start="2025-11-30T01:35:37.673613" elapsed="0.009121"/>
 </kw>
 <arg>Tache 3</arg>
-<status status="PASS" start="2025-11-30T01:32:38.020971" elapsed="0.009258"/>
+<status status="PASS" start="2025-11-30T01:35:37.673126" elapsed="0.009743"/>
 </kw>
 <kw name="Compter les taches actives" owner="keywords">
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:38.048288" level="INFO">${count_text} = 3 items left!</msg>
+<msg time="2025-11-30T01:35:37.701002" level="INFO">${count_text} = 3 items left!</msg>
 <var>${count_text}</var>
 <arg>${ITEM_COUNT}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-30T01:32:38.030903" elapsed="0.017472"/>
+<status status="PASS" start="2025-11-30T01:35:37.683582" elapsed="0.017513"/>
 </kw>
 <return>
 <value>${count_text}</value>
-<status status="PASS" start="2025-11-30T01:32:38.048536" elapsed="0.000131"/>
+<status status="PASS" start="2025-11-30T01:35:37.701262" elapsed="0.000118"/>
 </return>
-<msg time="2025-11-30T01:32:38.048962" level="INFO">${count} = 3 items left!</msg>
+<msg time="2025-11-30T01:35:37.701717" level="INFO">${count} = 3 items left!</msg>
 <var>${count}</var>
-<status status="PASS" start="2025-11-30T01:32:38.030536" elapsed="0.018483"/>
+<status status="PASS" start="2025-11-30T01:35:37.683194" elapsed="0.018585"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${count}</arg>
 <arg>3 items left</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-11-30T01:32:38.049308" elapsed="0.000256"/>
+<status status="PASS" start="2025-11-30T01:35:37.702130" elapsed="0.000366"/>
 </kw>
 <kw name="Fermer le navigateur" owner="keywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-30T01:32:38.050300" elapsed="0.990177"/>
+<status status="PASS" start="2025-11-30T01:35:37.703595" elapsed="1.032481"/>
 </kw>
-<status status="PASS" start="2025-11-30T01:32:38.049959" elapsed="0.990708"/>
+<status status="PASS" start="2025-11-30T01:35:37.703057" elapsed="1.033221"/>
 </kw>
 <doc>Verifier qu'on peut ajouter plusieurs taches</doc>
 <tag>ajout</tag>
-<status status="PASS" start="2025-11-30T01:32:31.635936" elapsed="7.404877"/>
+<status status="PASS" start="2025-11-30T01:35:31.204460" elapsed="7.532001"/>
 </test>
-<test id="s1-t3" name="TC007 - Ne pas ajouter de tache vide" line="31">
+<test id="s1-s1-t3" name="TC007 - Ne pas ajouter de tache vide" line="31">
 <kw name="Ouvrir l'application" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:39.042535" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
+<msg time="2025-11-30T01:35:38.738543" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-30T01:32:39.042201" elapsed="3.448148"/>
+<status status="PASS" start="2025-11-30T01:35:38.738216" elapsed="3.274853"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-11-30T01:32:42.490729" elapsed="0.287890"/>
+<status status="PASS" start="2025-11-30T01:35:42.013484" elapsed="0.288760"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${INPUT_FIELD}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-30T01:32:42.779384" elapsed="0.119967"/>
+<status status="PASS" start="2025-11-30T01:35:42.302893" elapsed="0.102563"/>
 </kw>
-<status status="PASS" start="2025-11-30T01:32:39.041791" elapsed="3.857751"/>
+<status status="PASS" start="2025-11-30T01:35:38.737795" elapsed="3.667851"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:42.900486" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
-<msg time="2025-11-30T01:32:43.234152" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2025-11-30T01:32:43.234265" level="INFO">Releasing special key RETURN.</msg>
+<msg time="2025-11-30T01:35:42.406535" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:35:42.794101" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:35:42.794265" level="INFO">Releasing special key RETURN.</msg>
 <arg>${INPUT_FIELD}</arg>
 <arg>RETURN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2025-11-30T01:32:42.899857" elapsed="0.438682"/>
+<status status="PASS" start="2025-11-30T01:35:42.405946" elapsed="0.469452"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-30T01:32:43.839557" level="INFO">Slept 500 milliseconds.</msg>
+<msg time="2025-11-30T01:35:43.376339" level="INFO">Slept 500 milliseconds.</msg>
 <arg>0.5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-30T01:32:43.338907" elapsed="0.501148"/>
+<status status="PASS" start="2025-11-30T01:35:42.875737" elapsed="0.500857"/>
 </kw>
 <kw name="Verifier qu'aucune tache n'existe" owner="keywords">
 <kw name="Get Element Count" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:32:43.847773" level="INFO">${elements} = 0</msg>
+<msg time="2025-11-30T01:35:43.385590" level="INFO">${elements} = 0</msg>
 <var>${elements}</var>
 <arg>${TODO_LIST} li</arg>
 <doc>Returns the number of elements matching ``locator``.</doc>
-<status status="PASS" start="2025-11-30T01:32:43.841124" elapsed="0.006732"/>
+<status status="PASS" start="2025-11-30T01:35:43.378062" elapsed="0.007624"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2025-11-30T01:32:43.848453" level="INFO">Argument types are:
+<msg time="2025-11-30T01:35:43.386374" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${elements}</arg>
 <arg>0</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2025-11-30T01:32:43.848130" elapsed="0.000454"/>
+<status status="PASS" start="2025-11-30T01:35:43.385991" elapsed="0.000514"/>
 </kw>
-<status status="PASS" start="2025-11-30T01:32:43.840611" elapsed="0.008102"/>
+<status status="PASS" start="2025-11-30T01:35:43.377479" elapsed="0.009178"/>
 </kw>
 <kw name="Fermer le navigateur" owner="keywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-30T01:32:43.849597" elapsed="1.059136"/>
+<status status="PASS" start="2025-11-30T01:35:43.387612" elapsed="1.050350"/>
 </kw>
-<status status="PASS" start="2025-11-30T01:32:43.849155" elapsed="1.059754"/>
+<status status="PASS" start="2025-11-30T01:35:43.387127" elapsed="1.051022"/>
 </kw>
 <doc>Verifier qu'on ne peut pas ajouter de tache vide</doc>
 <tag>validation</tag>
-<status status="PASS" start="2025-11-30T01:32:39.041196" elapsed="5.867847"/>
+<status status="PASS" start="2025-11-30T01:35:38.737166" elapsed="5.701133"/>
 </test>
-<status status="PASS" start="2025-11-30T01:32:25.505380" elapsed="19.404347"/>
+<status status="PASS" start="2025-11-30T01:35:25.314126" elapsed="19.124874"/>
+</suite>
+<suite id="s1-s2" name="Test Filtrage Taches" source="/home/elmoh/projet-tests-automatises/tests/test_filtrage_taches.robot">
+<test id="s1-s2-t1" name="TC005 - Filtrer les taches actives" line="17">
+<kw name="Preparer les taches pour filtrage" type="SETUP">
+<kw name="Ouvrir l'application" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:44.446563" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-30T01:35:44.446048" elapsed="3.269617"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-30T01:35:47.715948" elapsed="0.285368"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${INPUT_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-30T01:35:48.001732" elapsed="0.040223"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:35:44.445369" elapsed="3.596718"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:48.042869" level="INFO">Typing text 'Tache active 1' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:35:48.042617" elapsed="0.145906"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:48.189267" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:35:48.515662" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:35:48.515772" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:35:48.188777" elapsed="0.435679"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:35:49.125168" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:35:48.624747" elapsed="0.500681"/>
+</kw>
+<arg>Tache active 1</arg>
+<status status="PASS" start="2025-11-30T01:35:48.042282" elapsed="1.083370"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:49.132510" level="INFO">Typing text 'Tache active 2' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:35:49.126548" elapsed="0.035378"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:49.162860" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:35:49.504952" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:35:49.505070" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:35:49.162215" elapsed="0.359169"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:35:50.022342" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:35:49.521696" elapsed="0.500899"/>
+</kw>
+<arg>Tache active 2</arg>
+<status status="PASS" start="2025-11-30T01:35:49.126006" elapsed="0.896821"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:50.024309" level="INFO">Typing text 'Tache completee' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:35:50.023856" elapsed="0.029790"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:50.054749" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:35:50.347844" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:35:50.348010" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:35:50.053992" elapsed="0.310333"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:35:50.865114" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:35:50.364671" elapsed="0.500697"/>
+</kw>
+<arg>Tache completee</arg>
+<status status="PASS" start="2025-11-30T01:35:50.023221" elapsed="0.842384"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:50.866246" level="INFO">Clicking element 'css:.todo-list li:last-child .toggle'.</msg>
+<arg>css:.todo-list li:last-child .toggle</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:35:50.865873" elapsed="0.083501"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:35:51.450521" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:35:50.949798" elapsed="0.501190"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:35:44.444746" elapsed="7.006486"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:51.451965" level="INFO">Clicking element 'xpath://a[contains(text(),'Active')]'.</msg>
+<arg>xpath://a[contains(text(),'Active')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:35:51.451608" elapsed="0.038596"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:35:51.992020" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:35:51.491054" elapsed="0.501185"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:52.003468" level="INFO">Current page contains text 'Tache active 1'.</msg>
+<arg>Tache active 1</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:35:51.992644" elapsed="0.011033"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:52.013276" level="INFO">Current page contains text 'Tache active 2'.</msg>
+<arg>Tache active 2</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:35:52.004057" elapsed="0.009407"/>
+</kw>
+<kw name="Page Should Not Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:52.026990" level="INFO">Current page does not contain text 'Tache completee'.</msg>
+<arg>Tache completee</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:35:52.013869" elapsed="0.013407"/>
+</kw>
+<kw name="Fermer le navigateur" owner="keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-30T01:35:52.028241" elapsed="0.888634"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:35:52.027822" elapsed="0.889268"/>
+</kw>
+<doc>Verifier que le filtre Active fonctionne</doc>
+<tag>filtrage</tag>
+<status status="PASS" start="2025-11-30T01:35:44.443804" elapsed="8.473450"/>
+</test>
+<test id="s1-s2-t2" name="TC006 - Filtrer les taches completees" line="30">
+<kw name="Preparer les taches pour filtrage" type="SETUP">
+<kw name="Ouvrir l'application" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:52.919650" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-30T01:35:52.919263" elapsed="3.381953"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-30T01:35:56.301915" elapsed="0.288168"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${INPUT_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-30T01:35:56.590480" elapsed="0.035248"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:35:52.918893" elapsed="3.707070"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:56.627228" level="INFO">Typing text 'Tache active 1' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:35:56.626844" elapsed="0.098821"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:56.726344" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:35:57.028249" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:35:57.028426" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:35:56.725882" elapsed="0.372808"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:35:57.599422" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:35:57.098892" elapsed="0.500772"/>
+</kw>
+<arg>Tache active 1</arg>
+<status status="PASS" start="2025-11-30T01:35:56.626312" elapsed="0.973530"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:57.601045" level="INFO">Typing text 'Tache active 2' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:35:57.600676" elapsed="0.027871"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:57.629631" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:35:57.972457" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:35:57.972599" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:35:57.628890" elapsed="0.360225"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:35:58.490013" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:35:57.989389" elapsed="0.500907"/>
+</kw>
+<arg>Tache active 2</arg>
+<status status="PASS" start="2025-11-30T01:35:57.600156" elapsed="0.890371"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:58.492023" level="INFO">Typing text 'Tache completee' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:35:58.491563" elapsed="0.032999"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:58.525464" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:35:58.797034" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:35:58.797201" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:35:58.524859" elapsed="0.291051"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:35:59.316943" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:35:58.816279" elapsed="0.500941"/>
+</kw>
+<arg>Tache completee</arg>
+<status status="PASS" start="2025-11-30T01:35:58.490958" elapsed="0.826528"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:59.318388" level="INFO">Clicking element 'css:.todo-list li:last-child .toggle'.</msg>
+<arg>css:.todo-list li:last-child .toggle</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:35:59.317873" elapsed="0.081923"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:35:59.900837" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:35:59.400252" elapsed="0.500804"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:35:52.918419" elapsed="6.982822"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:35:59.901927" level="INFO">Clicking element 'xpath://a[contains(text(),'Completed')]'.</msg>
+<arg>xpath://a[contains(text(),'Completed')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:35:59.901603" elapsed="0.041595"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:36:00.444336" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:35:59.943678" elapsed="0.500866"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:00.455027" level="INFO">Current page contains text 'Tache completee'.</msg>
+<arg>Tache completee</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:36:00.444953" elapsed="0.010223"/>
+</kw>
+<kw name="Page Should Not Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:00.465161" level="INFO">Current page does not contain text 'Tache active 1'.</msg>
+<arg>Tache active 1</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:36:00.455465" elapsed="0.009815"/>
+</kw>
+<kw name="Page Should Not Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:00.475174" level="INFO">Current page does not contain text 'Tache active 2'.</msg>
+<arg>Tache active 2</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:36:00.465590" elapsed="0.009724"/>
+</kw>
+<kw name="Fermer le navigateur" owner="keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-30T01:36:00.476395" elapsed="1.011421"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:36:00.475892" elapsed="1.012098"/>
+</kw>
+<doc>Verifier que le filtre Completed fonctionne</doc>
+<tag>filtrage</tag>
+<status status="PASS" start="2025-11-30T01:35:52.917711" elapsed="8.570418"/>
+</test>
+<test id="s1-s2-t3" name="TC008 - Retour au filtre All" line="43">
+<kw name="Preparer les taches pour filtrage" type="SETUP">
+<kw name="Ouvrir l'application" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:01.490163" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-30T01:36:01.489818" elapsed="3.446580"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-30T01:36:04.936793" elapsed="0.351204"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${INPUT_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-30T01:36:05.288201" elapsed="0.025916"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:36:01.489482" elapsed="3.824846"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:05.315562" level="INFO">Typing text 'Tache active 1' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:36:05.315173" elapsed="0.073873"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:05.390178" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:36:05.701615" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:36:05.701756" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:36:05.389395" elapsed="0.421455"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:36:06.311907" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:36:05.811237" elapsed="0.500993"/>
+</kw>
+<arg>Tache active 1</arg>
+<status status="PASS" start="2025-11-30T01:36:05.314663" elapsed="0.997863"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:06.314299" level="INFO">Typing text 'Tache active 2' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:36:06.313803" elapsed="0.032214"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:06.347340" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:36:06.627639" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:36:06.627796" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:36:06.346393" elapsed="0.298556"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:36:07.145896" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:36:06.645270" elapsed="0.500866"/>
+</kw>
+<arg>Tache active 2</arg>
+<status status="PASS" start="2025-11-30T01:36:06.313055" elapsed="0.833283"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:07.147749" level="INFO">Typing text 'Tache completee' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:36:07.147291" elapsed="0.038784"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:07.187129" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:36:07.475002" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:36:07.475152" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:36:07.186390" elapsed="0.305494"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:36:07.992686" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:36:07.492155" elapsed="0.500753"/>
+</kw>
+<arg>Tache completee</arg>
+<status status="PASS" start="2025-11-30T01:36:07.146734" elapsed="0.846357"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:07.993717" level="INFO">Clicking element 'css:.todo-list li:last-child .toggle'.</msg>
+<arg>css:.todo-list li:last-child .toggle</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:36:07.993342" elapsed="0.081991"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:36:08.576374" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:36:08.075762" elapsed="0.500888"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:36:01.489083" elapsed="7.088094"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:08.578104" level="INFO">Clicking element 'xpath://a[contains(text(),'Active')]'.</msg>
+<arg>xpath://a[contains(text(),'Active')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:36:08.577723" elapsed="0.035876"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:36:08.914706" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:36:08.613993" elapsed="0.300950"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:08.916137" level="INFO">Clicking element 'xpath://a[contains(text(),'All')]'.</msg>
+<arg>xpath://a[contains(text(),'All')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:36:08.915436" elapsed="0.034751"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:36:09.451300" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:36:08.950625" elapsed="0.500880"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:09.461983" level="INFO">Current page contains text 'Tache active 1'.</msg>
+<arg>Tache active 1</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:36:09.451888" elapsed="0.010231"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:09.470405" level="INFO">Current page contains text 'Tache active 2'.</msg>
+<arg>Tache active 2</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:36:09.462402" elapsed="0.008148"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:09.479158" level="INFO">Current page contains text 'Tache completee'.</msg>
+<arg>Tache completee</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:36:09.470861" elapsed="0.008436"/>
+</kw>
+<kw name="Fermer le navigateur" owner="keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-30T01:36:09.480167" elapsed="0.988601"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:36:09.479766" elapsed="0.989180"/>
+</kw>
+<doc>Verifier qu'on peut revenir au filtre All</doc>
+<tag>filtrage</tag>
+<status status="PASS" start="2025-11-30T01:36:01.488483" elapsed="8.980628"/>
+</test>
+<status status="PASS" start="2025-11-30T01:35:44.439685" elapsed="26.029915"/>
+</suite>
+<suite id="s1-s3" name="Test Modification Tache" source="/home/elmoh/projet-tests-automatises/tests/test_modification_tache.robot">
+<test id="s1-s3-t1" name="TC003 - Marquer une tache comme terminee" line="7">
+<kw name="Ouvrir l'application" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:10.475490" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-30T01:36:10.475105" elapsed="3.413325"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-30T01:36:13.888889" elapsed="0.328464"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${INPUT_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-30T01:36:14.218021" elapsed="0.042173"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:36:10.474608" elapsed="3.785815"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:14.261788" level="INFO">Typing text 'Faire les courses' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:36:14.261386" elapsed="0.071400"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:14.333475" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:36:14.636298" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:36:14.636429" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:36:14.333009" elapsed="0.359143"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:36:15.193288" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:36:14.692520" elapsed="0.501007"/>
+</kw>
+<arg>Faire les courses</arg>
+<status status="PASS" start="2025-11-30T01:36:14.260886" elapsed="0.932871"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:15.194493" level="INFO">Clicking element 'css:.todo-list li:first-child .toggle'.</msg>
+<arg>css:.todo-list li:first-child .toggle</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:36:15.194129" elapsed="0.079727"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:36:15.775018" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:36:15.274426" elapsed="0.500815"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:15.796931" level="INFO">Element 'css:.todo-list li.completed' is displayed.</msg>
+<arg>css:.todo-list li.completed</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-30T01:36:15.775714" elapsed="0.021396"/>
+</kw>
+<kw name="Compter les taches actives" owner="keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:15.813330" level="INFO">${count_text} = 0 items left!</msg>
+<var>${count_text}</var>
+<arg>${ITEM_COUNT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:36:15.797902" elapsed="0.015511"/>
+</kw>
+<return>
+<value>${count_text}</value>
+<status status="PASS" start="2025-11-30T01:36:15.813558" elapsed="0.000101"/>
+</return>
+<msg time="2025-11-30T01:36:15.814110" level="INFO">${count} = 0 items left!</msg>
+<var>${count}</var>
+<status status="PASS" start="2025-11-30T01:36:15.797517" elapsed="0.016645"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${count}</arg>
+<arg>0 items left</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-11-30T01:36:15.814433" elapsed="0.000260"/>
+</kw>
+<kw name="Fermer le navigateur" owner="keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-30T01:36:15.815347" elapsed="1.025407"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:36:15.815022" elapsed="1.025917"/>
+</kw>
+<doc>Verifier qu'on peut completer une tache</doc>
+<tag>modification</tag>
+<status status="PASS" start="2025-11-30T01:36:10.473019" elapsed="6.368057"/>
+</test>
+<test id="s1-s3-t2" name="TC004 - Supprimer une tache" line="24">
+<kw name="Ouvrir l'application" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:16.842677" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-30T01:36:16.842347" elapsed="3.357008"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-30T01:36:20.200005" elapsed="0.278808"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${INPUT_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-30T01:36:20.479168" elapsed="0.039757"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:36:16.841982" elapsed="3.677175"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:20.520709" level="INFO">Typing text 'A supprimer' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:36:20.520222" elapsed="0.059620"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:20.581407" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:36:20.899604" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:36:20.899739" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:36:20.580297" elapsed="0.362009"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:36:21.443031" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:36:20.942625" elapsed="0.500665"/>
+</kw>
+<arg>A supprimer</arg>
+<status status="PASS" start="2025-11-30T01:36:20.519616" elapsed="0.923914"/>
+</kw>
+<kw name="Verifier que la tache existe" owner="keywords">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:21.456158" level="INFO">Current page contains text 'A supprimer'.</msg>
+<arg>${texte}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:36:21.444902" elapsed="0.011401"/>
+</kw>
+<arg>A supprimer</arg>
+<status status="PASS" start="2025-11-30T01:36:21.444245" elapsed="0.012201"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:21.457001" level="INFO">Simulating Mouse Over on element 'css:.todo-list li:first-child label'.</msg>
+<arg>css:.todo-list li:first-child label</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:36:21.456720" elapsed="0.277763"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:36:22.035456" level="INFO">Slept 300 milliseconds.</msg>
+<arg>0.3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:36:21.734829" elapsed="0.300898"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:22.036466" level="INFO">Clicking element 'css:.todo-list li:first-child .destroy'.</msg>
+<arg>css:.todo-list li:first-child .destroy</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:36:22.036116" elapsed="0.072231"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:36:22.609409" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:36:22.108778" elapsed="0.500890"/>
+</kw>
+<kw name="Page Should Not Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:22.624250" level="INFO">Current page does not contain text 'A supprimer'.</msg>
+<arg>A supprimer</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:36:22.610084" elapsed="0.014290"/>
+</kw>
+<kw name="Verifier qu'aucune tache n'existe" owner="keywords">
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:22.629556" level="INFO">${elements} = 0</msg>
+<var>${elements}</var>
+<arg>${TODO_LIST} li</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:36:22.625185" elapsed="0.004472"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-11-30T01:36:22.630131" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${elements}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-11-30T01:36:22.629879" elapsed="0.000344"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:36:22.624775" elapsed="0.005557"/>
+</kw>
+<kw name="Fermer le navigateur" owner="keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-30T01:36:22.631079" elapsed="0.981142"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:36:22.630732" elapsed="0.981642"/>
+</kw>
+<doc>Verifier qu'on peut supprimer une tache</doc>
+<tag>suppression</tag>
+<status status="PASS" start="2025-11-30T01:36:16.841428" elapsed="6.771067"/>
+</test>
+<status status="PASS" start="2025-11-30T01:36:10.470207" elapsed="13.142755"/>
+</suite>
+<suite id="s1-s4" name="Test Simple" source="/home/elmoh/projet-tests-automatises/tests/test_simple.robot">
+<test id="s1-s4-t1" name="Test d'ouverture de Google" line="5">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:23.616165" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>https://www.google.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-30T01:36:23.615920" elapsed="2.150451"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:36:25.776033" level="INFO">Page title is 'Google'.</msg>
+<arg>Google</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-11-30T01:36:25.766771" elapsed="0.009397"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-30T01:36:25.776428" elapsed="0.062909"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:36:23.615439" elapsed="2.224383"/>
+</test>
+<status status="PASS" start="2025-11-30T01:36:23.613437" elapsed="2.226921"/>
+</suite>
+<status status="PASS" start="2025-11-30T01:35:25.292288" elapsed="60.548905"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="2" fail="0" skip="0">ajout</stat>
+<stat pass="3" fail="0" skip="0">filtrage</stat>
+<stat pass="1" fail="0" skip="0">modification</stat>
 <stat pass="1" fail="0" skip="0">priorite_haute</stat>
+<stat pass="1" fail="0" skip="0">suppression</stat>
 <stat pass="1" fail="0" skip="0">validation</stat>
 </tag>
 <suite>
-<stat name="Test Ajout Tache" id="s1" pass="3" fail="0" skip="0">Test Ajout Tache</stat>
+<stat name="Tests" id="s1" pass="9" fail="0" skip="0">Tests</stat>
+<stat name="Test Ajout Tache" id="s1-s1" pass="3" fail="0" skip="0">Tests.Test Ajout Tache</stat>
+<stat name="Test Filtrage Taches" id="s1-s2" pass="3" fail="0" skip="0">Tests.Test Filtrage Taches</stat>
+<stat name="Test Modification Tache" id="s1-s3" pass="2" fail="0" skip="0">Tests.Test Modification Tache</stat>
+<stat name="Test Simple" id="s1-s4" pass="1" fail="0" skip="0">Tests.Test Simple</stat>
 </suite>
 </statistics>
 <errors>
