@@ -1,36 +1,338 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.9 on linux)" generated="2025-11-30T01:03:04.188386" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Simple" source="/home/elmoh/projet-tests-automatises/tests/test_simple.robot">
-<test id="s1-t1" name="Test d'ouverture de Google" line="5">
+<robot generator="Robot 7.3.2 (Python 3.13.9 on linux)" generated="2025-11-30T01:32:25.504222" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Ajout Tache" source="/home/elmoh/projet-tests-automatises/tests/test_ajout_tache.robot">
+<test id="s1-t1" name="TC001 - Ajouter une tache simple" line="7">
+<kw name="Ouvrir l'application" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:03:04.338034" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
-<arg>https://www.google.com</arg>
-<arg>chrome</arg>
+<msg time="2025-11-30T01:32:25.652553" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-30T01:03:04.337723" elapsed="1.492881"/>
+<status status="PASS" start="2025-11-30T01:32:25.652229" elapsed="3.571825"/>
 </kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-11-30T01:03:05.855546" level="INFO">Page title is 'Google'.</msg>
-<arg>Google</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-11-30T01:03:05.831291" elapsed="0.024551"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-30T01:32:29.224600" elapsed="0.294724"/>
 </kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${INPUT_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-30T01:32:29.519873" elapsed="0.039537"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:32:25.651465" elapsed="3.908217"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:29.561300" level="INFO">Typing text 'Acheter du pain' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:32:29.560873" elapsed="0.125408"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:29.687231" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:32:29.995307" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:32:29.995482" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:32:29.686532" elapsed="0.390068"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:32:30.577345" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:32:30.076848" elapsed="0.500780"/>
+</kw>
+<arg>Acheter du pain</arg>
+<status status="PASS" start="2025-11-30T01:32:29.560271" elapsed="1.017629"/>
+</kw>
+<kw name="Verifier que la tache existe" owner="keywords">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:30.594337" level="INFO">Current page contains text 'Acheter du pain'.</msg>
+<arg>${texte}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:32:30.579223" elapsed="0.015317"/>
+</kw>
+<arg>Acheter du pain</arg>
+<status status="PASS" start="2025-11-30T01:32:30.578466" elapsed="0.016300"/>
+</kw>
+<kw name="Compter les taches actives" owner="keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:30.619600" level="INFO">${count_text} = 1 item left!</msg>
+<var>${count_text}</var>
+<arg>${ITEM_COUNT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:32:30.595793" elapsed="0.023910"/>
+</kw>
+<return>
+<value>${count_text}</value>
+<status status="PASS" start="2025-11-30T01:32:30.619889" elapsed="0.000139"/>
+</return>
+<msg time="2025-11-30T01:32:30.620371" level="INFO">${count} = 1 item left!</msg>
+<var>${count}</var>
+<status status="PASS" start="2025-11-30T01:32:30.595249" elapsed="0.025181"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${count}</arg>
+<arg>1 item left</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-11-30T01:32:30.620778" elapsed="0.000344"/>
+</kw>
+<kw name="Fermer le navigateur" owner="keywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-30T01:03:05.856333" elapsed="0.078979"/>
+<status status="PASS" start="2025-11-30T01:32:30.622099" elapsed="1.013065"/>
 </kw>
-<status status="PASS" start="2025-11-30T01:03:04.336674" elapsed="1.599131"/>
+<status status="PASS" start="2025-11-30T01:32:30.621615" elapsed="1.013716"/>
+</kw>
+<doc>Verifier qu'on peut ajouter une tache</doc>
+<tag>ajout</tag>
+<tag>priorite_haute</tag>
+<status status="PASS" start="2025-11-30T01:32:25.650600" elapsed="5.984872"/>
 </test>
-<status status="PASS" start="2025-11-30T01:03:04.189301" elapsed="1.747354"/>
+<test id="s1-t2" name="TC002 - Ajouter plusieurs taches" line="16">
+<kw name="Ouvrir l'application" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:31.637333" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-30T01:32:31.636986" elapsed="3.373371"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-30T01:32:35.010641" elapsed="0.303466"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${INPUT_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-30T01:32:35.314478" elapsed="0.026131"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:32:31.636552" elapsed="3.704363"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:35.343357" level="INFO">Typing text 'Tache 1' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:32:35.342825" elapsed="0.087377"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:35.431186" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:32:35.734979" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:32:35.735099" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:32:35.430486" elapsed="0.339919"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:32:36.271156" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:32:35.770663" elapsed="0.500935"/>
+</kw>
+<arg>Tache 1</arg>
+<status status="PASS" start="2025-11-30T01:32:35.341641" elapsed="0.930830"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:36.274928" level="INFO">Typing text 'Tache 2' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:32:36.274320" elapsed="0.030963"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:36.306925" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:32:36.640408" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:32:36.640518" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:32:36.305943" elapsed="0.349135"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:32:37.155870" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:32:36.655356" elapsed="0.500768"/>
+</kw>
+<arg>Tache 2</arg>
+<status status="PASS" start="2025-11-30T01:32:36.273399" elapsed="0.883103"/>
+</kw>
+<kw name="Ajouter une tache" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:37.158488" level="INFO">Typing text 'Tache 3' into text field 'css:.new-todo'.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>${texte}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:32:37.158054" elapsed="0.034733"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:37.193834" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:32:37.481050" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:32:37.481235" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:32:37.193095" elapsed="0.302961"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:32:37.997114" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:32:37.496382" elapsed="0.500989"/>
+</kw>
+<arg>Tache 3</arg>
+<status status="PASS" start="2025-11-30T01:32:37.157375" elapsed="0.840266"/>
+</kw>
+<kw name="Verifier que la tache existe" owner="keywords">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:38.010750" level="INFO">Current page contains text 'Tache 1'.</msg>
+<arg>${texte}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:32:37.998981" elapsed="0.011914"/>
+</kw>
+<arg>Tache 1</arg>
+<status status="PASS" start="2025-11-30T01:32:37.998133" elapsed="0.012906"/>
+</kw>
+<kw name="Verifier que la tache existe" owner="keywords">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:38.020370" level="INFO">Current page contains text 'Tache 2'.</msg>
+<arg>${texte}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:32:38.011778" elapsed="0.008735"/>
+</kw>
+<arg>Tache 2</arg>
+<status status="PASS" start="2025-11-30T01:32:38.011357" elapsed="0.009303"/>
+</kw>
+<kw name="Verifier que la tache existe" owner="keywords">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:38.029972" level="INFO">Current page contains text 'Tache 3'.</msg>
+<arg>${texte}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-30T01:32:38.021377" elapsed="0.008726"/>
+</kw>
+<arg>Tache 3</arg>
+<status status="PASS" start="2025-11-30T01:32:38.020971" elapsed="0.009258"/>
+</kw>
+<kw name="Compter les taches actives" owner="keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:38.048288" level="INFO">${count_text} = 3 items left!</msg>
+<var>${count_text}</var>
+<arg>${ITEM_COUNT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:32:38.030903" elapsed="0.017472"/>
+</kw>
+<return>
+<value>${count_text}</value>
+<status status="PASS" start="2025-11-30T01:32:38.048536" elapsed="0.000131"/>
+</return>
+<msg time="2025-11-30T01:32:38.048962" level="INFO">${count} = 3 items left!</msg>
+<var>${count}</var>
+<status status="PASS" start="2025-11-30T01:32:38.030536" elapsed="0.018483"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${count}</arg>
+<arg>3 items left</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-11-30T01:32:38.049308" elapsed="0.000256"/>
+</kw>
+<kw name="Fermer le navigateur" owner="keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-30T01:32:38.050300" elapsed="0.990177"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:32:38.049959" elapsed="0.990708"/>
+</kw>
+<doc>Verifier qu'on peut ajouter plusieurs taches</doc>
+<tag>ajout</tag>
+<status status="PASS" start="2025-11-30T01:32:31.635936" elapsed="7.404877"/>
+</test>
+<test id="s1-t3" name="TC007 - Ne pas ajouter de tache vide" line="31">
+<kw name="Ouvrir l'application" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:39.042535" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/react/dist/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-30T01:32:39.042201" elapsed="3.448148"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-30T01:32:42.490729" elapsed="0.287890"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${INPUT_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-30T01:32:42.779384" elapsed="0.119967"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:32:39.041791" elapsed="3.857751"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:42.900486" level="INFO">Sending key(s) ('RETURN',) to css:.new-todo element.</msg>
+<msg time="2025-11-30T01:32:43.234152" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-11-30T01:32:43.234265" level="INFO">Releasing special key RETURN.</msg>
+<arg>${INPUT_FIELD}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-30T01:32:42.899857" elapsed="0.438682"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-30T01:32:43.839557" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-30T01:32:43.338907" elapsed="0.501148"/>
+</kw>
+<kw name="Verifier qu'aucune tache n'existe" owner="keywords">
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-11-30T01:32:43.847773" level="INFO">${elements} = 0</msg>
+<var>${elements}</var>
+<arg>${TODO_LIST} li</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-11-30T01:32:43.841124" elapsed="0.006732"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-11-30T01:32:43.848453" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${elements}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-11-30T01:32:43.848130" elapsed="0.000454"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:32:43.840611" elapsed="0.008102"/>
+</kw>
+<kw name="Fermer le navigateur" owner="keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-30T01:32:43.849597" elapsed="1.059136"/>
+</kw>
+<status status="PASS" start="2025-11-30T01:32:43.849155" elapsed="1.059754"/>
+</kw>
+<doc>Verifier qu'on ne peut pas ajouter de tache vide</doc>
+<tag>validation</tag>
+<status status="PASS" start="2025-11-30T01:32:39.041196" elapsed="5.867847"/>
+</test>
+<status status="PASS" start="2025-11-30T01:32:25.505380" elapsed="19.404347"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="2" fail="0" skip="0">ajout</stat>
+<stat pass="1" fail="0" skip="0">priorite_haute</stat>
+<stat pass="1" fail="0" skip="0">validation</stat>
 </tag>
 <suite>
-<stat name="Test Simple" id="s1" pass="1" fail="0" skip="0">Test Simple</stat>
+<stat name="Test Ajout Tache" id="s1" pass="3" fail="0" skip="0">Test Ajout Tache</stat>
 </suite>
 </statistics>
 <errors>
