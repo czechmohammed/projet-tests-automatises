@@ -10,8 +10,10 @@ ${ITEM_COUNT}    css:.todo-count
 
 *** Keywords ***
 Ouvrir l'application
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].FirefoxOptions()    sys, selenium.webdriver
+    Call Method    ${options}    add_argument    --headless
+    Open Browser    ${URL}    ${BROWSER}    options=${options}
+    Set Window Size    1920    1080
     Wait Until Page Contains Element    ${INPUT_FIELD}    timeout=10s
 
 Fermer le navigateur
