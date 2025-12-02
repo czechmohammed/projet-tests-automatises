@@ -3,3 +3,13 @@ rapports/
 __pycache__/
 .vscode/
 *.log
+
+rapports/
+*.pyc
+__pycache__/
+.vscode/
+*.log
+log.html
+output.xml
+report.html
+selenium-screenshot-*.png
