@@ -23,9 +23,11 @@ Une application simple de gestion de taches qui permet de:
 - Robot Framework 7.3.2
 - SeleniumLibrary 6.8.0
 - Python 3.13
-- Firefox 145
+- Firefox ESR 140
+- Jenkins (Docker)
+- ngrok (exposition publique)
 
-### Projet 2: Java Selenium (en cours)
+### Projet 2: Java Selenium (a venir)
 - Java 17
 - Selenium WebDriver
 - TestNG
@@ -40,10 +42,13 @@ projet-tests-automatises/
 │   └── test_filtrage_taches.robot
 ├── ressources/
 │   └── keywords.robot              # Keywords reutilisables
-├── rapports/                       # Rapports de tests generes
+├── rapports/                       # Rapports de tests generes (git ignore)
 ├── docs/
 │   ├── plan_de_tests.md           # Plan de tests detaille
-│   └── strategie_recette.md       # Strategie globale
+│   ├── strategie_recette.md       # Strategie globale
+│   └── jenkins_setup.md           # Guide installation Jenkins
+├── Dockerfile                      # Image Jenkins personnalisee
+├── requirements.txt                # Dependances Python
 └── README.md
 ```
 
@@ -52,9 +57,15 @@ projet-tests-automatises/
 ### Prerequis
 - Python 3.x
 - pip
-- Firefox ou Chrome
+- Firefox
+- Docker (pour Jenkins)
 
 ### Installation des dependances
+```bash
+pip3 install -r requirements.txt
+```
+
+Ou manuellement:
 ```bash
 pip3 install robotframework
 pip3 install robotframework-seleniumlibrary
@@ -95,21 +106,58 @@ Les rapports sont generes automatiquement apres chaque execution:
 - `log.html`: details de chaque etape
 - `output.xml`: donnees brutes
 
+## Integration continue
+
+### CI/CD avec Jenkins et webhook GitHub
+
+Le projet utilise un pipeline CI/CD complet:
+
+1. Push du code sur GitHub
+2. GitHub envoie une notification via webhook
+3. Jenkins clone automatiquement le repo
+4. Les tests se lancent en mode headless
+5. Rapports publies automatiquement dans Jenkins
+
+Configuration detaillee: voir [docs/jenkins_setup.md](docs/jenkins_setup.md)
+
+### Historique des builds
+
+Les derniers builds sont visibles dans Jenkins avec:
+- Statut (succes/echec)
+- Duree d'execution
+- Declencheur (push GitHub ou manuel)
+- Rapports Robot Framework integres
+
 ## Documentation
 
-- [Plan de tests](docs/plan_de_tests.md): description detaillee des cas de test
+- [Plan de tests](docs/plan_de_tests.md): description detaillee des 8 cas de test
 - [Strategie de recette](docs/strategie_recette.md): approche globale et processus
+- [Guide Jenkins](docs/jenkins_setup.md): installation et configuration complete
+
+## Ce que j'ai appris
+
+### Tests automatises
+- Ecriture de cas de test clairs et reproductibles
+- Automatisation avec Robot Framework
+- Organisation des tests par fonctionnalite
+- Generation et analyse de rapports
+
+### CI/CD
+- Configuration d'un pipeline Jenkins
+- Integration avec GitHub via webhooks
+- Automatisation complete du processus de test
+- Docker pour l'environnement reproductible
+
+### Bonnes pratiques
+- Documentation technique complete
+- Versionning avec Git
+- Structure de projet claire
+- Tests maintenables et reutilisables
 
 ## Prochaines etapes
 
-- [ ] Integration Jenkins pour CI/CD
 - [ ] Projet parallele avec Java + Selenium
-- [ ] Tests de performance avec Locust
-- [ ] Dashboard de suivi des tests
+- [ ] Tests de performance
+- [ ] Tests multi-navigateurs
+- [ ] Notifications par email en cas d'echec
 
-## Auteur
-
-Mohammed Mekdour 
-Etudiant M2 Cloud et Infrastructures
-ENSIMAG
-# Test webhook CI/CD
