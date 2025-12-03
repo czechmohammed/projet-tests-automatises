@@ -194,6 +194,53 @@ Jenkins (Docker)
 Rapports disponibles dans Jenkins
 ```
 
+
+
+## Configuration du deuxieme job (Java Selenium)
+
+Pour automatiser aussi les tests Java Selenium, creer un deuxieme job Jenkins.
+
+### Creer le job
+
+1. Dashboard Jenkins > New Item
+2. Nom: Tests-TodoMVC-Java-Selenium
+3. Type: Freestyle project
+4. OK
+
+### Configuration
+
+**Section General**:
+- Description: Tests automatises TodoMVC avec Java Selenium et TestNG
+
+**Section Source Code Management**:
+- Git
+- Repository URL: https://github.com/czechmohammed/projet-tests-automatises.git
+- Branch: */main
+
+**Section Build Triggers**:
+- GitHub hook trigger for GITScm polling
+
+**Section Build Steps**:
+- Execute shell:
+```bash
+cd java-selenium
+mvn clean test
+```
+
+**Section Post-build Actions**:
+- Publish JUnit test result report
+- Test report XMLs: java-selenium/target/surefire-reports/*.xml
+
+### Resultat
+
+Les deux jobs se lancent automatiquement a chaque push grace au meme webhook GitHub.
+
+Avantage: comparaison directe des deux approches (Robot Framework vs Java Selenium) dans Jenkins.
+
+
+
+
+
 ## Troubleshooting
 
 ### Probleme: Jenkins ne demarre pas
@@ -278,3 +325,5 @@ git push
 - Penser a mettre a jour le webhook GitHub si l'URL change
 - Les rapports Jenkins sont persistes grace au volume Docker jenkins_home
 - Pour reinitialiser Jenkins completement: docker volume rm jenkins_home
+
+

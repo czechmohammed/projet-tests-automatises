@@ -1,17 +1,17 @@
 # Projet de tests automatises TodoMVC
 
-Projet personnel d'apprentissage des tests automatises avec Robot Framework et Java Selenium.
+Projet personnel pour apprendre les tests automatises avec Robot Framework et Java Selenium.
 
 ## Contexte
 
-Ce projet a ete realise pour me preparer a un stage en test logiciel chez Sogeti Capgemini.
-L'objectif etait de comprendre et pratiquer l'automatisation de tests sur une vraie application web.
+Ce projet a ete fait pour me preparer a un stage en test logiciel chez Sogeti Capgemini.
+L'objectif etait de pratiquer l'automatisation de tests sur une vraie application web avec deux approches differentes.
 
 ## Application testee
 
 TodoMVC (React): https://todomvc.com/examples/react/dist/
 
-Une application simple de gestion de taches qui permet de:
+Application simple de gestion de taches:
 - Ajouter des taches
 - Les marquer comme terminees
 - Les supprimer
@@ -25,139 +25,155 @@ Une application simple de gestion de taches qui permet de:
 - Python 3.13
 - Firefox ESR 140
 - Jenkins (Docker)
-- ngrok (exposition publique)
+- ngrok pour exposition publique
 
-### Projet 2: Java Selenium (a venir)
-- Java 17
-- Selenium WebDriver
-- TestNG
+### Projet 2: Java Selenium
+- Java 21
+- Selenium WebDriver 4.15
+- TestNG 7.8
 - Maven
+- Pattern Page Object Model
 
 ## Structure du projet
 ```
 projet-tests-automatises/
-├── tests/                          # Tests automatises Robot Framework
+├── tests/                          # tests Robot Framework
 │   ├── test_ajout_tache.robot
 │   ├── test_modification_tache.robot
 │   └── test_filtrage_taches.robot
 ├── ressources/
-│   └── keywords.robot              # Keywords reutilisables
-├── rapports/                       # Rapports de tests generes (git ignore)
+│   └── keywords.robot              # keywords reutilisables
+├── java-selenium/                  # projet Java Selenium
+│   ├── src/main/java/pages/
+│   └── src/test/java/tests/
 ├── docs/
-│   ├── plan_de_tests.md           # Plan de tests detaille
-│   ├── strategie_recette.md       # Strategie globale
-│   └── jenkins_setup.md           # Guide installation Jenkins
-├── Dockerfile                      # Image Jenkins personnalisee
-├── requirements.txt                # Dependances Python
+│   ├── plan_de_tests.md
+│   ├── strategie_recette.md
+│   └── jenkins_setup.md
+├── Dockerfile                      # image Jenkins personnalisee
 └── README.md
 ```
 
 ## Installation
 
 ### Prerequis
-- Python 3.x
-- pip
+- Python 3.x et pip
+- Java 21 et Maven
 - Firefox
-- Docker (pour Jenkins)
+- Docker pour Jenkins
 
-### Installation des dependances
+### Dependances Python
 ```bash
 pip3 install -r requirements.txt
 ```
 
-Ou manuellement:
+### Dependances Java
 ```bash
-pip3 install robotframework
-pip3 install robotframework-seleniumlibrary
-pip3 install webdriver-manager
+cd java-selenium
+mvn clean install
 ```
 
-## Lancement des tests
+## Lancer les tests
 
-### Tous les tests
+### Tests Robot Framework
+
+Tous les tests:
 ```bash
 robot tests/
 ```
 
-### Un fichier specifique
+Un fichier specifique:
 ```bash
 robot tests/test_ajout_tache.robot
 ```
 
-### Par tag
+Par tag:
 ```bash
 robot --include ajout tests/
-robot --include priorite_haute tests/
 ```
+
+### Tests Java Selenium
+
+Voir le README dedie: [java-selenium/README.md](java-selenium/README.md)
 
 ## Resultats
 
-8 cas de test automatises couvrant:
-- Ajout de taches (3 tests)
-- Modification et suppression (2 tests)
-- Filtrage (3 tests)
+**Robot Framework**: 8 tests (100% de reussite)
+- Ajout de taches: 3 tests
+- Modification et suppression: 2 tests
+- Filtrage: 3 tests
 
-Taux de reussite actuel: 100% (8/8)
+**Java Selenium**: 6 tests (100% de reussite)
+- Memes fonctionnalites testees avec une approche differente
 
 ## Rapports
 
-Les rapports sont generes automatiquement apres chaque execution:
-- `report.html`: vue d'ensemble visuelle
-- `log.html`: details de chaque etape
-- `output.xml`: donnees brutes
+### Robot Framework
+Rapports generes automatiquement:
+- report.html: vue d'ensemble
+- log.html: details des etapes
+- output.xml: donnees brutes
+
+### Java Selenium
+Rapports TestNG dans target/surefire-reports/
 
 ## Integration continue
 
-### CI/CD avec Jenkins et webhook GitHub
+Le projet utilise deux jobs Jenkins distincts avec webhook GitHub pour lancer les tests automatiquement a chaque push.
 
-Le projet utilise un pipeline CI/CD complet:
+Pipeline:
+1. Push sur GitHub
+2. Webhook notifie Jenkins
+3. Jenkins clone le repo
+4. Les deux jobs se lancent en parallele
+5. Rapports publies dans Jenkins
 
-1. Push du code sur GitHub
-2. GitHub envoie une notification via webhook
-3. Jenkins clone automatiquement le repo
-4. Les tests se lancent en mode headless
-5. Rapports publies automatiquement dans Jenkins
-
-Configuration detaillee: voir [docs/jenkins_setup.md](docs/jenkins_setup.md)
-
-### Historique des builds
-
-Les derniers builds sont visibles dans Jenkins avec:
-- Statut (succes/echec)
-- Duree d'execution
-- Declencheur (push GitHub ou manuel)
-- Rapports Robot Framework integres
+Configuration complete: voir docs/jenkins_setup.md
 
 ## Documentation
 
-- [Plan de tests](docs/plan_de_tests.md): description detaillee des 8 cas de test
-- [Strategie de recette](docs/strategie_recette.md): approche globale et processus
-- [Guide Jenkins](docs/jenkins_setup.md): installation et configuration complete
+- plan_de_tests.md: 8 cas de test detailles
+- strategie_recette.md: approche globale et process
+- jenkins_setup.md: guide installation Jenkins avec les deux jobs
+- java-selenium/README.md: infos specifiques au projet Java
+
+## Comparaison des deux approches
+
+### Robot Framework
+Avantages:
+- syntaxe simple et lisible
+- rapide a mettre en place
+- parfait pour des tests simples
+- facile a maintenir
+
+Inconvenients:
+- moins de flexibilite pour des cas complexes
+- debugging parfois difficile
+
+### Java Selenium
+Avantages:
+- controle total sur le code
+- pattern Page Object plus propre
+- bonne integration dans des projets Java existants
+- meilleur pour des gros projets
+
+Inconvenients:
+- plus verbose
+- setup plus long
+- courbe d'apprentissage plus raide
+
+Pour plus de details techniques sur le projet Java, voir java-selenium/README.md
 
 ## Ce que j'ai appris
 
 ### Tests automatises
-- Ecriture de cas de test clairs et reproductibles
-- Automatisation avec Robot Framework
-- Organisation des tests par fonctionnalite
-- Generation et analyse de rapports
+- ecrire des cas de test clairs
+- automatiser avec deux technologies differentes
+- organiser les tests par fonctionnalite
+- generer et analyser des rapports
 
 ### CI/CD
-- Configuration d'un pipeline Jenkins
-- Integration avec GitHub via webhooks
-- Automatisation complete du processus de test
-- Docker pour l'environnement reproductible
-
-### Bonnes pratiques
-- Documentation technique complete
-- Versionning avec Git
-- Structure de projet claire
-- Tests maintenables et reutilisables
-
-## Prochaines etapes
-
-- [ ] Projet parallele avec Java + Selenium
-- [ ] Tests de performance
-- [ ] Tests multi-navigateurs
-- [ ] Notifications par email en cas d'echec
-
+- configurer deux pipelines Jenkins distincts
+- webhooks GitHub
+- automatisation complete du process
+- environnement Docker
