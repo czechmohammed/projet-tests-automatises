@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-12-03T02:24:41 CET" name="TodoMVC Test Suite" finished-at="2025-12-03T02:25:18 CET" duration-ms="36398">
+    <groups>
+    </groups>
+    <test started-at="2025-12-03T02:24:41 CET" name="TodoMVC Tests" finished-at="2025-12-03T02:25:18 CET" duration-ms="36398">
+      <class name="tests.TodoMVCTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:24:41 CET" name="setup" finished-at="2025-12-03T02:24:46 CET" duration-ms="4286" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="test01_ajouterUneTache()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:24:46 CET" name="test01_ajouterUneTache" finished-at="2025-12-03T02:24:47 CET" duration-ms="1434" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test01_ajouterUneTache -->
+        <test-method is-config="true" signature="fermer()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:24:47 CET" name="fermer" finished-at="2025-12-03T02:24:48 CET" duration-ms="1294" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fermer -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:24:48 CET" name="setup" finished-at="2025-12-03T02:24:51 CET" duration-ms="2618" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="test02_ajouterPlusieursTaches()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:24:51 CET" name="test02_ajouterPlusieursTaches" finished-at="2025-12-03T02:24:53 CET" duration-ms="2219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test02_ajouterPlusieursTaches -->
+        <test-method is-config="true" signature="fermer()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:24:53 CET" name="fermer" finished-at="2025-12-03T02:24:54 CET" duration-ms="982" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fermer -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:24:54 CET" name="setup" finished-at="2025-12-03T02:24:57 CET" duration-ms="2567" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="test03_cocherUneTache()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:24:57 CET" name="test03_cocherUneTache" finished-at="2025-12-03T02:24:58 CET" duration-ms="1634" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test03_cocherUneTache -->
+        <test-method is-config="true" signature="fermer()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:24:58 CET" name="fermer" finished-at="2025-12-03T02:24:59 CET" duration-ms="962" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fermer -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:24:59 CET" name="setup" finished-at="2025-12-03T02:25:02 CET" duration-ms="2379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="test04_supprimerUneTache()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:25:02 CET" name="test04_supprimerUneTache" finished-at="2025-12-03T02:25:04 CET" duration-ms="2135" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test04_supprimerUneTache -->
+        <test-method is-config="true" signature="fermer()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:25:04 CET" name="fermer" finished-at="2025-12-03T02:25:05 CET" duration-ms="870" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fermer -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:25:05 CET" name="setup" finished-at="2025-12-03T02:25:07 CET" duration-ms="2477" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="test05_filtrerTachesActives()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:25:07 CET" name="test05_filtrerTachesActives" finished-at="2025-12-03T02:25:11 CET" duration-ms="3404" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test05_filtrerTachesActives -->
+        <test-method is-config="true" signature="fermer()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:25:11 CET" name="fermer" finished-at="2025-12-03T02:25:11 CET" duration-ms="891" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fermer -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:25:11 CET" name="setup" finished-at="2025-12-03T02:25:14 CET" duration-ms="2460" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="test06_filtrerTachesCompletees()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:25:14 CET" name="test06_filtrerTachesCompletees" finished-at="2025-12-03T02:25:17 CET" duration-ms="2868" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test06_filtrerTachesCompletees -->
+        <test-method is-config="true" signature="fermer()[pri:0, instance:tests.TodoMVCTest@433d61fb]" started-at="2025-12-03T02:25:17 CET" name="fermer" finished-at="2025-12-03T02:25:18 CET" duration-ms="880" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fermer -->
+      </class> <!-- tests.TodoMVCTest -->
+    </test> <!-- TodoMVC Tests -->
+  </suite> <!-- TodoMVC Test Suite -->
+</testng-results>
